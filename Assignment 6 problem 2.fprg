@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ABRAHAM.CISNEROS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-21 03:57:20 PM"/>
+        <attribute name="created" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wMy0xNzswODozMTo0MCBQTTszMTky"/>
+        <attribute name="edited" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswMzo1NzoyMCBQTTs2OzMzMDI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="battingaverage" type="Real" array="False" size=""/>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <input variable="lastname"/>
+            <declare name="noh" type="Real" array="False" size=""/>
+            <input variable="noh"/>
+            <declare name="ab" type="Real" array="False" size=""/>
+            <input variable="ab"/>
+            <call expression="battingavg(noh,ab)"/>
+            <assign variable="battingaverage" expression="batting(noh,ab)"/>
+            <output expression="lastname" newline="True"/>
+            <output expression="battingaverage" newline="True"/>
+        </body>
+    </function>
+    <function name="battingavg" type="Real" variable="average">
+        <parameters>
+            <parameter name="noh" type="Real" array="False"/>
+            <parameter name="ab" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="noh" type="Real" array="False" size=""/>
+            <declare name="ab" type="Real" array="False" size=""/>
+            <input variable="noh"/>
+            <input variable="ab"/>
+            <declare name="battingavg" type="Real" array="False" size=""/>
+            <assign variable="battingavg" expression="noh / ab"/>
+        </body>
+    </function>
+</flowgorithm>

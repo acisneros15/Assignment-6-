@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ABRAHAM.CISNEROS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-21 04:17:49 PM"/>
+        <attribute name="created" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wMy0xNzswOTowOTozOCBQTTszMjA1"/>
+        <attribute name="edited" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswNDoxNzo0OSBQTTszOzMzMDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="city" type="String" array="False" size=""/>
+            <declare name="miles" type="Real" array="False" size=""/>
+            <declare name="gallonsused" type="Real" array="False" size=""/>
+            <declare name="gascost" type="Real" array="False" size=""/>
+            <output expression="&quot;where did you drive to?&quot;" newline="True"/>
+            <input variable="city"/>
+            <output expression="&quot;how many miles did you drive?&quot;" newline="True"/>
+            <input variable="miles"/>
+            <output expression="&quot;how many gallons did you use?&quot;" newline="True"/>
+            <input variable="gallonsused"/>
+            <call expression="mlspergallon(miles, gallonsused)"/>
+            <call expression="compgascost(gallonsused)"/>
+            <assign variable="gascost" expression="compgascost(gallonsused)"/>
+            <output expression="city &amp; &quot;,&quot; &amp; miles &amp; &quot;,&quot; &amp; gascost" newline="True"/>
+        </body>
+    </function>
+    <function name="compgascost" type="Real" variable="gascost">
+        <parameters>
+            <parameter name="gascost" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="gascost" type="Real" array="False" size=""/>
+            <declare name="gallonsused" type="Real" array="False" size=""/>
+            <assign variable="gascost" expression="gallonsused * 2.50"/>
+        </body>
+    </function>
+    <function name="mlspergallon" type="Real" variable="milespergallon">
+        <parameters>
+            <parameter name="milespergallon" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="milespergallon" type="Real" array="False" size=""/>
+            <declare name="miles" type="Real" array="False" size=""/>
+            <declare name="gallonsused" type="Real" array="False" size=""/>
+            <assign variable="milespergallon" expression="miles / gallonsused"/>
+        </body>
+    </function>
+</flowgorithm>

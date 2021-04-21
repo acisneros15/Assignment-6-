@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ABRAHAM.CISNEROS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-21 04:38:05 PM"/>
+        <attribute name="created" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswNDoxODowOCBQTTszMTkz"/>
+        <attribute name="edited" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswNDozODowNSBQTTsxOzMzMDA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <output expression="&quot;Enter students last name: &quot;" newline="True"/>
+            <input variable="lastname"/>
+            <declare name="credithours" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter credit hours: &quot;" newline="True"/>
+            <input variable="credithours"/>
+            <declare name="districtcode" type="String" array="False" size=""/>
+            <output expression="&quot;Enter district code: &quot;" newline="True"/>
+            <input variable="districtcode"/>
+            <call expression="comptuitown(credithours, districtcode)"/>
+            <declare name="tuitowned" type="Real" array="False" size=""/>
+            <assign variable="tuitowned" expression="comptuitown (credithours, districtcode)"/>
+            <output expression="lastname &amp; &quot;,&quot; &amp; tuitowned" newline="True"/>
+        </body>
+    </function>
+    <function name="comptuitown" type="Real" variable="tuitionowed">
+        <parameters>
+            <parameter name="credithours" type="Real" array="False"/>
+            <parameter name="districtcode" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="tuitionowed" type="Real" array="False" size=""/>
+            <declare name="percredithr" type="Real" array="False" size=""/>
+            <if expression="districtcode = &quot;I&quot; or districtcode = &quot;i&quot;">
+                <then>
+                    <assign variable="percredithr" expression="250"/>
+                </then>
+                <else>
+                    <assign variable="percredithr" expression="550"/>
+                </else>
+            </if>
+            <assign variable="tuitionowed" expression="credithours * percredithr"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ABRAHAM.CISNEROS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-03 03:53:29 PM"/>
+        <attribute name="created" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wMy0wMzswMzoyMDowOSBQTTszMTg1"/>
+        <attribute name="edited" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wMy0wMzswMzo1MzoyOSBQTTsxOzMzMDE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="qty"/>
+            <input variable="price"/>
+            <call expression="comptotal(qty, price)"/>
+            <assign variable="total" expression="comptotal(qty,price)"/>
+            <output expression="total" newline="True"/>
+        </body>
+    </function>
+    <function name="comptotal" type="Real" variable="total">
+        <parameters>
+            <parameter name="qty" type="Real" array="False"/>
+            <parameter name="price" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="total" expression="qty*price"/>
+            <if expression="total &gt; 10000">
+                <then>
+                    <assign variable="total" expression="total * 0.90"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
